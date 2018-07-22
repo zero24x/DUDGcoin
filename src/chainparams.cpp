@@ -71,9 +71,9 @@ public:
         // The message start string is designed to be unlikely to occur in normal data.
         // The characters are rarely used upper ASCII, not valid as UTF-8, and produce
         // a large 4-byte int at any alignment.
-        pchMessageStart[0] = 0xed;
-        pchMessageStart[1] = 0xf8;
-        pchMessageStart[2] = 0xa3;
+        pchMessageStart[0] = 0xd0;
+        pchMessageStart[1] = 0xf4;
+        pchMessageStart[2] = 0xa7;
         pchMessageStart[3] = 0x7c;
         vAlertPubKey = ParseHex("04f3bc45863ef2c9a0ae9665adb9c5a7f4abc1e0f22aea621d0467a53fe778c975524119fb4bc0c3638def2f1e9b003ed1e0f09a00b61aecd51d2f581f77e285d6");
         nDefaultPort = 44777;
@@ -88,27 +88,27 @@ public:
         //    CTxIn(COutPoint(0000000000, 4294967295), coinbase 00012a24323020466562203230313420426974636f696e2041544d7320636f6d6520746f20555341)
         //    CTxOut(empty)
         //  vMerkleTree: 12630d16a9
-        const char* pszTimestamp = "19 July 2018 -DudgCoin launch";
+        const char* pszTimestamp = "23 July 2018 -DudgCoin launch";
         std::vector<CTxIn> vin;
         vin.resize(1);
         vin[0].scriptSig = CScript() << 0 << CBigNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         std::vector<CTxOut> vout;
         vout.resize(1);
         vout[0].SetEmpty();
-        CTransaction txNew(1, 1532017778, vin, vout, 0);
+        CTransaction txNew(1, 1532298058, vin, vout, 0);
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime    = 1532017778;
+        genesis.nTime    = 1532298058;
         genesis.nBits    = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce   = 1618377;
+        genesis.nNonce   = 1697358;
 
         hashGenesisBlock = genesis.GetHash();
-          assert(hashGenesisBlock == uint256("0x000007b4cf1bc9da7d962300fe86ad32432eacd73dc17ae6b8b4c2f2c742b6d4"));
-          assert(genesis.hashMerkleRoot == uint256("0x50f6ac13ead52c96cbfa059be0b179fb700de622a26f6567d314a6f1709faab6"));
+          assert(hashGenesisBlock == uint256("0x0000057ed9a78806ae822c9765c3bdd9cde245201733ee442bdbe0f420875ea7"));
+          assert(genesis.hashMerkleRoot == uint256("0x475f086a72614515d4cfa4ff196c23fc9abc5750e1c4a51a1101b43cd901e01f"));
 
-         MineGenesis(genesis);
+         //MineGenesis(genesis);
 
         vSeeds.push_back(CDNSSeedData("8.12.18.59", "8.12.18.59")); // Vultur server 1
 		vSeeds.push_back(CDNSSeedData("66.42.45.135", "66.42.45.135")); // Vultur server 2
@@ -150,10 +150,10 @@ public:
         // The message start string is designed to be unlikely to occur in normal data.
         // The characters are rarely used upper ASCII, not valid as UTF-8, and produce
         // a large 4-byte int at any alignment.
-        pchMessageStart[0] = 0xd7;
+        pchMessageStart[0] = 0x11;
         pchMessageStart[1] = 0xa5;
-        pchMessageStart[2] = 0xc6;
-        pchMessageStart[3] = 0x17;
+        pchMessageStart[2] = 0xcb;
+        pchMessageStart[3] = 0xd4;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 16);
         vAlertPubKey = ParseHex(" 04b107e6941c8b4f9f61e19e3408fa46a9423304aac04554a3c7412d8b3ec8be5cdaee77ea69d778b5496505167a3ccdc25dee2aacdffe6f43c343b8d38792ffe8");
         nDefaultPort = 33772;
