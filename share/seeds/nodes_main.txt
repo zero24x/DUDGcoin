@@ -1,0 +1,8 @@
+# List of fixed seed nodes for main network
+
+# IPv4 nodes
+	8.12.18.59 // Vultur server 1
+	66.42.45.135 // Vultur server 2
+	199.247.25.62 // Vultur server 3
+
+
