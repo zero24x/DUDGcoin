@@ -1010,10 +1010,10 @@ int64_t GetProofOfWorkReward(int64_t nFees)
     if(pindexBest->nHeight == 1) {
         nSubsidy = 50000000 * COIN;
 	}
-    else if(pindexBest->nHeight <= 10) { //14days worth
+    else if(pindexBest->nHeight <= 10) { //14 days worth
        nSubsidy = 0 * COIN;
    }
-	else if(pindexBest->nHeight <= 21300) { //16days worth
+	else if(pindexBest->nHeight <= 21300) { //20days worth
        nSubsidy = 40 * COIN;
     } else {
         nSubsidy = 0 * COIN;

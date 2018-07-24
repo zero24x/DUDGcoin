@@ -88,25 +88,25 @@ public:
         //    CTxIn(COutPoint(0000000000, 4294967295), coinbase 00012a24323020466562203230313420426974636f696e2041544d7320636f6d6520746f20555341)
         //    CTxOut(empty)
         //  vMerkleTree: 12630d16a9
-        const char* pszTimestamp = "23 July 2018 -DudgCoin launch";
+        const char* pszTimestamp = "24 July 2018 -DudgCoin launch";
         std::vector<CTxIn> vin;
         vin.resize(1);
         vin[0].scriptSig = CScript() << 0 << CBigNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         std::vector<CTxOut> vout;
         vout.resize(1);
         vout[0].SetEmpty();
-        CTransaction txNew(1, 1532298058, vin, vout, 0);
+        CTransaction txNew(1, 1532436522, vin, vout, 0);
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime    = 1532298058;
+        genesis.nTime    = 1532436522;
         genesis.nBits    = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce   = 1697358;
+        genesis.nNonce   = 1793206;
 
         hashGenesisBlock = genesis.GetHash();
-          assert(hashGenesisBlock == uint256("0x0000057ed9a78806ae822c9765c3bdd9cde245201733ee442bdbe0f420875ea7"));
-          assert(genesis.hashMerkleRoot == uint256("0x475f086a72614515d4cfa4ff196c23fc9abc5750e1c4a51a1101b43cd901e01f"));
+          assert(hashGenesisBlock == uint256("0x0000030db811513b27730db016f3b913c4af6f687296a6d5ba0fc5f2cf5df98a"));
+          assert(genesis.hashMerkleRoot == uint256("0xa6f0a31b8a14e9a0e1198b0d75e4135ad9f42995f77e62de369d50debc76fd4d"));
 
          //MineGenesis(genesis);
 
