@@ -7,11 +7,11 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleGetInfoString</key>
-	<string>DudgCoin-Qt</string>
+	<string>DUDGCOIN</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleExecutable</key>
-	<string>DudgCoin-Qt</string>
+	<string>DUDGCOIN</string>
 	<key>CFBundleIdentifier</key>
 	<string>co.dudgcoin.DudgCoin-Qt</string>
         <key>CFBundleURLTypes</key>
